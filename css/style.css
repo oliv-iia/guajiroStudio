@@ -3,7 +3,158 @@
     --color-galeria: #000000;
     --color-acento: #F1F5F2;
     --color-superficie: #810E1B;
+    --color-franja: #1a0408;
+    --color-marquesina-texto: #c4303f;
+
+    --fuente-titulo: "Schabo", sans-serif;
+    --fuente-texto: "Helvetica Neue 55", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     --transicion: 0.25s ease;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    background: var(--color-fondo);
+    color: var(--color-acento);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 560px;
+    overflow: hidden;
+    background: var(--color-fondo);
+}
+
+/* franja diagonal oscura */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 16%;
+    background: var(--color-franja);
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    z-index: 2;
+}
+
+/* ---------- NAV ---------- */
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+}
+
+.nav__links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    transition: color 0.25s ease;
+}
+
+.nav a:hover {
+    color: var(--color-galeria);
+}
+
+/* ---------- PALMA ---------- */
+.hero__palma {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: auto;
+    max-width: none;
+    z-index: 1;
+}
+
+/* ---------- TÍTULO ---------- */
+.hero__titulo {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    font-family: var(--fuente-titulo);
+    font-weight: 400;
+    font-size: clamp(6rem, 22vw, 20rem);
+    line-height: 0.8;
+    color: var(--color-galeria);
+    white-space: nowrap;
+}
+
+.hero__ro {
+    position: relative;
+    display: inline-block;
+}
+
+.hero__std {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    font-family: var(--fuente-texto);
+    font-weight: 400;
+    font-synthesis: none;
+    font-size: 0.5em;
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--color-acento);
+}
+
+/* ---------- MARQUESINA ---------- */
+.marquesina {
+    position: absolute;
+    left: 0;
+    bottom: 4%;
+    width: 100%;
+    padding: 0.35rem 0;
+    background: var(--color-franja);
+    overflow: hidden;
+    z-index: 3;
+}
+
+.marquesina__pista {
+    display: flex;
+    width: max-content;
+}
+
+.marquesina__pista ul {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.marquesina__pista li {
+    padding: 0 1.1rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+    color: var(--color-marquesina-texto);
+    white-space: nowrap;
+}
+
 
