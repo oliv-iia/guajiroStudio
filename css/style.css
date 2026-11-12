@@ -303,26 +303,125 @@ ul {
     cursor: pointer;
 }
 
-/* móvil */
-@media (max-width: 768px) {
-    .guajiros {
-        padding: 6rem 1.5rem 3rem;
-    }
-
-    .card {
-        grid-template-columns: 5rem 1fr;
-        column-gap: 1.5rem;
-    }
-
-    .card__foto {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    .card__cuerpo {
-        font-size: 1.15rem;
-    }
+/* ---------- AGENDA ---------- */
+.agenda {
+    position: relative;
+    display: grid;
+    grid-template-columns: 46% 1fr;
+    min-height: 100vh;
+    padding: 7rem 3.5rem 4rem 0;
+    background: var(--color-fondo);
+    overflow: hidden;
 }
+
+.agenda__flor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 44%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.agenda__form {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 30rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.agenda__titulo {
+    margin-bottom: 1.5rem;
+    font-family: var(--fuente-titulo);
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-galeria);
+}
+
+.agenda__label {
+    margin-bottom: 0.6rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.3rem;
+    line-height: 1.1;
+    color: var(--color-galeria);
+}
+
+.agenda__campo {
+    width: 100%;
+    margin-bottom: 1.4rem;
+    padding: 0.5rem 0.7rem;
+    background: transparent;
+    border: 1px solid var(--color-acento);
+    border-radius: 0;
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    color: var(--color-acento);
+}
+
+.agenda__campo--texto {
+    min-height: 4rem;
+    resize: vertical;
+}
+
+.agenda__campo:focus {
+    outline: 2px solid var(--color-galeria);
+    outline-offset: 2px;
+}
+
+.agenda__campo option {
+    color: var(--color-galeria);
+}
+
+.agenda__check {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.3rem;
+    color: var(--color-galeria);
+    cursor: pointer;
+}
+
+.agenda__check input {
+    appearance: none;
+    flex-shrink: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0;
+    background: transparent;
+    border: 1px solid var(--color-acento);
+    cursor: pointer;
+}
+
+.agenda__check input:checked {
+    background: var(--color-acento);
+}
+
+.agenda__boton {
+    align-self: center;
+    margin-top: 3rem;
+    padding: 0.7rem 3rem;
+    background: #d9d9d9;
+    border: 0;
+    font-family: var(--fuente-titulo);
+    font-size: 1.2rem;
+    color: var(--color-galeria);
+    cursor: pointer;
+}
+
+.agenda__boton:hover {
+    background: var(--color-acento);
+}
+
+
+
+
 
 /* ---------- FOOTER ---------- */
 .footer {
@@ -393,3 +492,23 @@ ul {
     color: var(--color-marquesina-texto);
 }
 
+/* móvil */
+@media (max-width: 768px) {
+    .guajiros {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    .card {
+        grid-template-columns: 5rem 1fr;
+        column-gap: 1.5rem;
+    }
+
+    .card__foto {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .card__cuerpo {
+        font-size: 1.15rem;
+    }
+}

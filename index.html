@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GuajitoStd.</title>
     <!-- FONT -->
     <link href="https://fonts.cdnfonts.com/css/schabo" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
@@ -118,6 +118,44 @@
     </article>
 
   </div>
+</section>
+
+<section class="agenda" id="agenda">
+
+  <img class="agenda__flor" src="media/mariposa_estencil 1.png" alt="">
+
+  <form class="agenda__form" novalidate>
+    <h2 class="agenda__titulo">Agenda</h2>
+
+    <label class="agenda__label" for="nombre">Nombre*</label>
+    <input class="agenda__campo" type="text" id="nombre" name="nombre" required>
+
+    <label class="agenda__label" for="apellido">Apellido*</label>
+    <input class="agenda__campo" type="text" id="apellido" name="apellido" required>
+
+    <label class="agenda__label" for="correo">Correo Electrónico*</label>
+    <input class="agenda__campo" type="email" id="correo" name="correo" required>
+
+    <label class="agenda__label" for="dibujo">Cuéntanos qué dibujito quieres*</label>
+    <textarea class="agenda__campo agenda__campo--texto" id="dibujo" name="dibujo" rows="3" required></textarea>
+
+    <label class="agenda__label" for="artista">Elige tu artista</label>
+    <select class="agenda__campo" id="artista" name="artista">
+      <option value="">Sin preferencia</option>
+      <option value="guajiro-1">Nombre 1</option>
+      <option value="guajiro-2">Nombre 2</option>
+      <option value="guajiro-3">Nombre 3</option>
+      <option value="guajiro-4">Nombre 4</option>
+    </select>
+
+    <label class="agenda__check">
+      <input type="checkbox" name="mayor" required>
+      <span>Tengo 18 años o más *</span>
+    </label>
+
+    <button class="agenda__boton" type="button">Enviar</button>
+  </form>
+
 </section>
 
 <footer class="footer" id="contacto">
