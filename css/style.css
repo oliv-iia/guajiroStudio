@@ -1,0 +1,9 @@
+:root {
+    --color-fondo: #6B0F1A;
+    --color-galeria: #000000;
+    --color-acento: #F1F5F2;
+    --color-superficie: #810E1B;
+
+    --transicion: 0.25s ease;
+}
+
