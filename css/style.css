@@ -419,9 +419,68 @@ ul {
     background: var(--color-acento);
 }
 
+/* ---------- PÁGINA GALERÍA ---------- */
+/* body.pagina-galeria {
+    background: #000000;
+} */
 
+.pagina-galeria {
+    background: var(--color-galeria);
+}
 
+.nav--galeria {
+    background: var(--color-galeria);
+}
 
+.nav--galeria .nav__logo {
+    visibility: visible;
+    color: var(--color-superficie);
+}
+
+.nav--galeria .nav__links {
+    margin-left: auto;
+}
+
+.nav--galeria a:hover,
+.nav--galeria a.is-active {
+    color: var(--color-superficie);
+}
+
+/* ---------- GALERÍA ---------- */
+.galeria {
+    padding: 7rem 3.5rem 4rem;
+}
+
+.galeria__titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 400;
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--color-superficie);
+}
+
+.galeria__grid {
+    max-width: 56rem;
+    margin: 2.5rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.galeria__grid figure {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeria__grid img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
 
 /* ---------- FOOTER ---------- */
 .footer {
