@@ -210,6 +210,7 @@ ul {
     white-space: nowrap;
 }
 
+
 /* ---------- GUAJIROS ---------- */
 .guajiros {
     padding: 7rem 3.5rem 5rem;
@@ -229,7 +230,8 @@ ul {
     max-width: 62rem;
     margin: 1.2rem auto 0;
     font-family: var(--fuente-texto);
-    font-weight: 700;
+    font-weight: 400;
+    font-synthesis: none;
     font-size: 0.8rem;
     line-height: 1.2;
     text-align: justify;
@@ -358,70 +360,46 @@ ul {
 
 .agenda__campo {
     width: 100%;
-    margin-bottom: 1.4rem;
-    padding: 0.5rem 0.7rem;
-    background: transparent;
-    border: 1px solid var(--color-acento);
-    border-radius: 0;
+    margin-bottom: 1.2rem;
+    padding: 0.6rem 1rem;
+    background: rgba(241, 245, 242, 0.65);
+    border: 0;
+    border-radius: 999px;
     font-family: var(--fuente-texto);
     font-size: 1rem;
-    color: var(--color-acento);
-}
-
-.agenda__campo--texto {
-    min-height: 4rem;
-    resize: vertical;
-}
-
-.agenda__campo:focus {
-    outline: 2px solid var(--color-galeria);
-    outline-offset: 2px;
-}
-
-.agenda__campo option {
     color: var(--color-galeria);
 }
 
-.agenda__check {
+.agenda__fila {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.agenda__fila--final {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.agenda__fila--final .agenda__campo {
+    margin-bottom: 0;
+}
+
+.agenda__artista {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    font-family: var(--fuente-titulo);
-    font-size: 1.3rem;
-    color: var(--color-galeria);
-    cursor: pointer;
+    gap: 1rem;
 }
 
 .agenda__check input {
-    appearance: none;
-    flex-shrink: 0;
-    width: 1.8rem;
-    height: 1.8rem;
-    margin: 0;
-    background: transparent;
-    border: 1px solid var(--color-acento);
-    cursor: pointer;
-}
-
-.agenda__check input:checked {
-    background: var(--color-acento);
-}
-
-.agenda__boton {
-    align-self: center;
-    margin-top: 3rem;
-    padding: 0.7rem 3rem;
-    background: #d9d9d9;
     border: 0;
-    font-family: var(--fuente-titulo);
-    font-size: 1.2rem;
-    color: var(--color-galeria);
-    cursor: pointer;
+    border-radius: 0.3rem;
+    background: rgba(241, 245, 242, 0.65);
 }
 
-.agenda__boton:hover {
-    background: var(--color-acento);
-}
+
 
 /* ---------- PÁGINA GALERÍA ---------- */
 /* body.pagina-galeria {
@@ -505,7 +483,8 @@ ul {
     max-width: 62rem;
     margin: 1.2rem auto 0;
     font-family: var(--fuente-texto);
-    font-weight: 700;
+    font-weight: 400;
+    font-synthesis: none;
     font-size: 0.8rem;
     line-height: 1.2;
     text-align: justify;
@@ -528,7 +507,8 @@ ul {
 .evento__texto {
     margin-top: 0.6rem;
     font-family: var(--fuente-texto);
-    font-weight: 700;
+    font-weight: 400;
+    font-synthesis: none;
     font-size: 0.8rem;
     line-height: 1.2;
     text-align: justify;
