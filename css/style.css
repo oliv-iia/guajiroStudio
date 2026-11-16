@@ -584,23 +584,3 @@ ul {
     color: var(--color-marquesina-texto);
 }
 
-/* móvil */
-@media (max-width: 768px) {
-    .guajiros {
-        padding: 6rem 1.5rem 3rem;
-    }
-
-    .card {
-        grid-template-columns: 5rem 1fr;
-        column-gap: 1.5rem;
-    }
-
-    .card__foto {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    .card__cuerpo {
-        font-size: 1.15rem;
-    }
-}

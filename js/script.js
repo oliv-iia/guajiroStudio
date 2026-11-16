@@ -68,3 +68,37 @@ function iniciarMarquesinas() {
 }
 
 document.fonts.ready.then(iniciarMarquesinas);
+
+
+//ACCORDION
+$(function () {
+  function abrirCard($card) {
+    $card.find('.card__detalle').stop(true, true).slideDown(300, function () {
+      $card.addClass('is-open');
+    });
+    $card.find('.card__mas').attr('aria-expanded', 'true');
+  }
+
+  function cerrarCard($card) {
+   
+    $card.find('.card__detalle').stop(true, true).slideUp(300, function () {
+      $card.removeClass('is-open');
+    });
+    $card.find('.card__mas').attr('aria-expanded', 'false');
+  }
+
+  $('.card__mas').on('click', function () {
+    const $card = $(this).closest('.card');
+    const estabaAbierta = $card.hasClass('is-open');
+
+    $('.card.is-open').not($card).each(function () {
+      cerrarCard($(this));
+    });
+
+    if (estabaAbierta) {
+      cerrarCard($card);
+    } else {
+      abrirCard($card);
+    }
+  });
+});
