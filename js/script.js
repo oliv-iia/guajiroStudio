@@ -1,5 +1,7 @@
 AOS.init({
-      duration: 2000
+      duration: 2000,
+      once: true,
+      easing: 'ease-out-cubic'
     });
 
  //Para que std oucpe el tamaño de ro (de guajiro)
