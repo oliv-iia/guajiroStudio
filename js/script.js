@@ -220,3 +220,14 @@ document.querySelectorAll('.evento__video').forEach(video => {
     });
 
 })();
+
+// Parallax en los videos
+window.addEventListener('load', function () {
+  var videos = document.querySelectorAll('.evento__video');
+
+  new SimpleParallax(videos, {
+    scale: 1.6,     
+    delay: 0.4,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+});
