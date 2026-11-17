@@ -100,21 +100,6 @@ $(function () {
   });
 });
 
-//Para que los videos play
-const observadorVideos = new IntersectionObserver(entradas => {
-  entradas.forEach(entrada => {
-    if (entrada.isIntersecting) {
-      entrada.target.play();
-    } else {
-      entrada.target.pause();
-    }
-  });
-}, { threshold: 0.4 });
-
-document.querySelectorAll('.evento__video').forEach(video => {
-  observadorVideos.observe(video);
-});
-
 //AGENDA formulario
 (function () {
 
@@ -143,7 +128,7 @@ document.querySelectorAll('.evento__video').forEach(video => {
         mensaje.className = 'mensaje';
     }
 
-    // Teléfono: entre 9 y 15 dígitos, con + opcional al principio. Se ignoran espacios y guiones
+  
     function telefonoValido(texto) {
         var limpio = texto.replace(/[\s-]/g, '');
         return /^\+?[0-9]{9,15}$/.test(limpio);
@@ -203,7 +188,7 @@ document.querySelectorAll('.evento__video').forEach(video => {
             return;
         }
 
-        // Todo correcto: aquí irá tu envío real (por ahora solo mostramos los datos)
+      
         var datos = {
             nombre: nombre,
             telefono: telefono,
@@ -226,8 +211,22 @@ window.addEventListener('load', function () {
   var videos = document.querySelectorAll('.evento__video');
 
   new SimpleParallax(videos, {
-    scale: 1.6,     
+    scale: 1.3,
     delay: 0.4,
     transition: 'cubic-bezier(0,0,0,1)'
+  });
+
+  var observadorVideos = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (entrada.isIntersecting) {
+        entrada.target.play();
+      } else {
+        entrada.target.pause();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.evento__video').forEach(function (video) {
+    observadorVideos.observe(video);
   });
 });
