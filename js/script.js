@@ -102,3 +102,11 @@ $(function () {
     }
   });
 });
+
+
+
+$(function () {
+  $('.menu-mobile a').on('click', function () {
+    $('#sideMenu').prop('checked', false);
+  });
+});

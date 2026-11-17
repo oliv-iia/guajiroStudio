@@ -128,6 +128,77 @@ ul {
     visibility: visible;
 }
 
+
+
+/* ---------- MENÚ MÓVIL ---------- */
+.side-menu {
+    display: none;
+}
+
+.hamb {
+    display: none; /* lo último que se oculta, como dice tu profesor */
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.hamb > .fa-x {
+    display: none;
+}
+
+.nav-mobile {
+    position: absolute;
+    top: 0%;          
+    left: 0;
+    width: 100%;
+    background: var(--color-fondo);
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.menu-mobile {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    font-size: 2rem;
+}
+
+.nav__logo,
+.hamb {
+    position: relative;
+    z-index: 2;
+}
+
+.nav__logo {
+    position: absolute; 
+}
+
+/* abrir el menú cuando el checkbox está marcado */
+.side-menu:checked ~ .nav-mobile {
+    max-height: 100vh;
+}
+
+.side-menu:checked ~ .hamb > .fa-bars {
+    display: none;
+}
+
+.side-menu:checked ~ .hamb > .fa-x {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .nav__links {
+        display: none;
+    }
+
+    .hamb {
+        display: block;
+    }
+}
+
 /* ---------- PALMA ---------- */
 .hero__palma {
     position: absolute;
