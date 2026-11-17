@@ -144,7 +144,7 @@
       <button class="card__mas" aria-expanded="false" aria-label="Ver más">+</button>
     </article>
 
-    <article class="card is-open">
+    <article class="card">
       <img class="card__foto" src="media/cat/para web/cat.png" alt="Nombre del tatuador">
       <div class="card__cuerpo">
         <h3 class="card__nombre">Cat</h3>
@@ -183,44 +183,43 @@
 
   <img class="agenda__flor" src="media/mariposa_estencil 1.png" alt="">
 
- <form class="agenda__form" novalidate>
+ <form class="agenda__form" id="formulario-agenda" novalidate>
   <h2 class="agenda__titulo">Agenda</h2>
 
-  <label class="agenda__label" for="nombre">Tu Nombre*</label>
-  <input class="agenda__campo" type="text" id="nombre" name="nombre" required>
+  <label class="agenda__label" for="nombre">Nombre completo*</label>
+  <input class="agenda__campo" type="text" id="nombre" name="nombre" autocomplete="name">
 
   <label class="agenda__label" for="telefono">Número de teléfono*</label>
-  <input class="agenda__campo" type="tel" id="telefono" name="telefono" required>
+  <input class="agenda__campo" type="tel" id="telefono" name="telefono" autocomplete="tel">
 
-  <label class="agenda__label" for="correo">Correo Electrónico*</label>
-  <input class="agenda__campo" type="email" id="correo" name="correo" required>
+  <label class="agenda__label" for="correo">Correo electrónico*</label>
+  <input class="agenda__campo" type="email" id="correo" name="correo" autocomplete="email">
 
-  <div class="agenda__fila agenda__fila--fecha">
-    <label class="agenda__label" for="fecha">Elige una fecha</label>
-    <div class="agenda__calendario">
-      <input type="text" id="fecha" name="fecha" hidden>
-    </div>
-  </div>
+  <label class="agenda__label" for="descripcion">Descripción del tatuaje</label>
+  <textarea class="agenda__campo agenda__campo--texto" id="descripcion" name="descripcion" rows="3"></textarea>
 
   <div class="agenda__fila agenda__fila--final">
     <div class="agenda__artista">
       <label class="agenda__label" for="artista">Elige tu artista</label>
       <select class="agenda__campo" id="artista" name="artista">
         <option value="">Sin preferencia</option>
-        <option value="guajiro-1">Nombre 1</option>
-        <option value="guajiro-2">Nombre 2</option>
-        <option value="guajiro-3">Nombre 3</option>
-        <option value="guajiro-4">Nombre 4</option>
+        <option value="roger">Roger Kampo</option>
+        <option value="arbel">Arbel</option>
+        <option value="jota">Jota</option>
+        <option value="cat">Cat</option>
       </select>
     </div>
 
-    <label class="agenda__check">
-      <input type="checkbox" name="mayor" required>
+    <label class="agenda__check" id="check-mayor">
+      <input type="checkbox" id="mayor" name="mayor">
       <span>Tengo 18 años o más *</span>
     </label>
   </div>
 
   <button class="agenda__boton" type="submit">Enviar</button>
+
+  <!-- Aquí aparecen los avisos de error o de envío correcto -->
+  <p class="mensaje" id="mensaje" role="status" aria-live="polite"></p>
 </form>
 
 </section>
@@ -235,7 +234,7 @@
   </p>
 
   <article class="evento">
-    <video class="evento__video" controls muted preload="metadata" playsinline>
+    <video class="evento__video" loop muted playsinline preload="metadata">
       <source src="media/videos/london.mp4" type="video/mp4">
     </video>
     <p class="evento__texto">
@@ -247,7 +246,7 @@
   </article>
 
   <article class="evento">
-    <video class="evento__video" controls muted preload="metadata" playsinline>
+    <video class="evento__video" loop muted playsinline preload="metadata">
       <source src="media/videos/paris.mp4" type="video/mp4">
     </video>
     <p class="evento__texto">

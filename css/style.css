@@ -329,11 +329,15 @@ ul {
 
 .card__cuerpo {
     display: grid;
-    gap: 0.5rem;
+    gap: 0;
     font-family: var(--fuente-titulo);
     font-size: 1.4rem;
     line-height: 1.1;
     color: var(--color-acento);
+}
+
+.card__cuerpo > * {
+    margin-bottom: 0.5rem;
 }
 
 .card__nombre,
@@ -352,15 +356,16 @@ ul {
 
 .card__detalle {
     display: none;
-    min-height: 4rem;
+    /* min-height: 4rem; */
+    overflow: hidden;
     font-family: var(--fuente-texto);
     font-size: 0.85rem;
     line-height: 1.3;
     color: var(--color-acento);
 }
 
-.card.is-open .card__detalle {
-    display: block;
+.card__detalle { 
+    display: none; 
 }
 
 .card__mas {
@@ -374,6 +379,11 @@ ul {
     line-height: 1;
     color: var(--color-acento);
     cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.card__mas.abierto {
+    transform: rotate(45deg);
 }
 
 /* ---------- AGENDA ---------- */
@@ -466,6 +476,109 @@ ul {
     background: rgba(241, 245, 242, 0.65);
 }
 
+
+
+.agenda__boton {
+    align-self: center;
+    margin-top: 2rem;
+    padding: 0.45rem 2rem;      
+    background: rgba(241, 245, 242, 0.65);
+    border: 0;
+    border-radius: 999px;     
+    font-family: var(--fuente-titulo);
+    font-size: 1.05rem;       
+    color: var(--color-galeria);
+    cursor: pointer;
+}
+
+
+
+.agenda__campo--texto {
+    border-radius: 1.2rem;
+    resize: vertical;
+}
+
+/* errores */
+.agenda__campo.is-error {
+    box-shadow: 0 0 0 3px var(--color-galeria);
+    background: rgba(241, 245, 242, 0.95);
+}
+
+.agenda__check.is-error input {
+    box-shadow: 0 0 0 3px var(--color-galeria);
+}
+
+.agenda__check.is-error span {
+    text-decoration: underline;
+}
+
+/* mensajes */
+.mensaje:empty {
+    display: none;
+}
+
+.mensaje {
+    margin-top: 1.2rem;
+    padding: 0.8rem 1rem;
+    border-radius: 0.6rem;
+    font-family: var(--fuente-texto);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.mensaje--error {
+    background: var(--color-galeria);
+    color: var(--color-acento);
+}
+
+.mensaje--ok {
+    background: var(--color-acento);
+    color: var(--color-galeria);
+}
+
+/* Opciones: funciona en todos los navegadores, pero sin esquinas redondeadas */
+#artista option {
+    font-family: var(--fuente-titulo);
+    font-size: 1.3rem;
+    color: var(--color-galeria);
+    background: #d9b9bd;
+}
+
+/* Lista personalizada (Chrome y Edge recientes) */
+@supports (appearance: base-select) {
+    #artista,
+    #artista::picker(select) {
+        appearance: base-select;
+    }
+
+    #artista::picker-icon {
+        display: none;
+    }
+
+    #artista::picker(select) {
+        margin-top: 0.4rem;
+        padding: 0.5rem;
+        background: rgba(241, 245, 242, 0.65);
+        border: 0;
+        border-radius: 1.2rem;
+        box-shadow: none;
+    }
+
+    #artista option {
+        padding: 0.35rem 0.8rem;
+        background: transparent;
+        border-radius: 0.6rem;
+    }
+
+    #artista option:hover,
+    #artista option:checked {
+        background: rgba(0, 0, 0, 0.12);
+    }
+
+    #artista option::checkmark {
+        display: none;
+    }
+}
 
 
 /* ---------- PÁGINA GALERÍA ---------- */
